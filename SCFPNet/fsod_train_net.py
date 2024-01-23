@@ -1,14 +1,5 @@
-#!/usr/bin/env python3
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 
-"""
-Created on Wednesday, September 28, 2022
-
-This script is a simplified version of the training script in detectron2/tools.
-
-@author: Guangxing Han
-"""
-# seed = 42
+seed = 42
 import os
 
 from detectron2.checkpoint import DetectionCheckpointer
@@ -43,16 +34,16 @@ from detectron2.utils.logger import setup_logger
 import random
 
 
-# def seed_everything(seed):
-#     random.seed(seed)
-#     os.environ['PYTHONHASHSEED'] = str(seed)
-#     np.random.seed(seed)
-#     torch.manual_seed(seed)
-#     torch.cuda.manual_seed(seed)
-#     torch.backends.cudnn.deterministic = True
-#     torch.backends.cudnn.benchmark = True
-#
-# seed_everything(seed)
+def seed_everything(seed):
+    random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = True
+
+seed_everything(seed)
 class Trainer(DefaultTrainer):
 
     @classmethod
