@@ -1,8 +1,3 @@
-## Highlights
-
-- To the best of our knowledge, we are the first to explore and propose the vision transformer based models for few-shot object detection.
-- The proposed FCT model can encourage multi-level interactions between the query and support, gradually from low-level to high-level feature spaces.
-
 ## Installation
 
 Our codebase is built upon [detectron2](https://github.com/facebookresearch/detectron2). You only need to install [detectron2](https://github.com/facebookresearch/detectron2/blob/main/INSTALL.md) following their instructions.
@@ -33,7 +28,7 @@ sh scripts/single_branch_pretraining_coco_pvt_v2_b2_li.sh
 ```
 sh scripts/two_branch_training_coco_pvt_v2_b2_li.sh
 ```
-- Finally we perform 1/2/3/5/10/30-shot fine-tuning over novel classes, using the exact same few-shot datasets as [TFA](https://github.com/ucbdrive/few-shot-object-detection). The training script is
+- Finally we perform 10/30-shot fine-tuning over novel classes, using the exact same few-shot datasets as [TFA](https://github.com/ucbdrive/few-shot-object-detection). The training script is
 ```
 sh scripts/two_branch_few_shot_finetuning_coco_pvt_v2_b2_li.sh
 ```
@@ -60,39 +55,3 @@ sh scripts/single_branch_pretraining_pascalvoc_split3_pvt_v2_b2_li.sh
 sh scripts/two_branch_training_pascalvoc_split3_pvt_v2_b2_li.sh
 sh scripts/two_branch_few_shot_finetuning_pascalvoc_split3_pvt_v2_b2_li.sh
 ```
-
-## Model Zoo 
-
-We provided both the single-branch pre-trained models and the meta-trained models (the two-branch based models) over base classes for both MSCOCO dataset and the 3 splits on VOC dataset. The model links are [Google Drive](https://drive.google.com/drive/u/0/folders/1VFkR6siG4TH6L2ASxpefYMIYMNH_CjoB) and [Tencent Weiyun](https://share.weiyun.com/Oy0yoJyB).
-
-## Citing FCT
-If you use this work in your research or wish to refer to the baseline results published here, please use the following BibTeX entries:
-```
-@inproceedings{han2022few,
-  title={Few-shot object detection with fully cross-transformer},
-  author={Han, Guangxing and Ma, Jiawei and Huang, Shiyuan and Chen, Long and Chang, Shih-Fu},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={5321--5330},
-  year={2022}
-}
-@inproceedings{han2022meta,
-  title={Meta faster r-cnn: Towards accurate few-shot object detection with attentive feature alignment},
-  author={Han, Guangxing and Huang, Shiyuan and Ma, Jiawei and He, Yicheng and Chang, Shih-Fu},
-  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
-  volume={36},
-  number={1},
-  pages={780--789},
-  year={2022}
-}
-@inproceedings{han2021query,
-  title={Query adaptive few-shot object detection with heterogeneous graph convolutional networks},
-  author={Han, Guangxing and He, Yicheng and Huang, Shiyuan and Ma, Jiawei and Chang, Shih-Fu},
-  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
-  pages={3263--3272},
-  year={2021}
-}
-```
-
-## Acknowledgement
-
-This repo is developed based on [Meta Faster R-CNN](https://github.com/GuangxingHan/Meta-Faster-R-CNN), [QA-FewDet](https://github.com/GuangxingHan/QA-FewDet) and [PVT](https://github.com/whai362/PVT). Thanks for their wonderful codebases.
