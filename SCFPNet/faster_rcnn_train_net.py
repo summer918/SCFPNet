@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-# Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-
-"""
-Created on Wednesday, September 28, 2022
-
-This script is a simplified version of the training script in detectron2/tools.
-
-@author: Guangxing Han
-"""
-
 import os
 
 from detectron2.checkpoint import DetectionCheckpointer
